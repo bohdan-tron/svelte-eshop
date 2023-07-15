@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+}
+img {
+  border-radius: 5px;
+}
+h1 {
+  text-transform: capitalize;
+}

@@ -1,0 +1,26 @@
+[
+  {
+      "id": 1,
+      "category": {
+          "id": 1,
+          "name": "Category1",
+          "description": "category 1 description"
+      },
+      "name": "Product1",
+      "description": "Product1 description",
+      "price": "9.99",
+      "image": "https://imgur.com/qNEatej"
+  },
+  {
+      "id": 2,
+      "category": {
+          "id": 2,
+          "name": "Category2",
+          "description": "Category2 description"
+      },
+      "name": "Product2",
+      "description": "Product2 description",
+      "price": "12.99",
+      "image": "https://imgur.com/1swnzIq"
+  }
+]

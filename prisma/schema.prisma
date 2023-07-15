@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  // output = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "sqlite"
+  // url      = env("DATABASE_URL")
+
+  url = "file:./dev.db"
+}
+
+model Product {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title       String
+  description String
+  price       Float
+  slug        String  @unique
+  published   Boolean @default(false)
+  thumbnail   String
+}
+
+// model Product {
+//   id    Int    @id @default(autoincrement())
+//   name  String
+//   price Float
+// }
+// model Post {
+//   id        Int      @id @default(autoincrement())
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+
+//   title     String
+//   content   String?
+//   slug      String  @unique
+//   published Boolean @default(false)
+// }
