@@ -1,5 +1,6 @@
 # dev
-pnpm i
+pnpm i 
+
 pnpm run dev
 
 ## technology
