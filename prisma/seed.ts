@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 
 const db = new PrismaClient();
 
-type Device = {
+export type Device = {
   title: string;
   description: string;
   price: number;

@@ -1,7 +1,7 @@
 import type { RequestHandler } from "./$types";
 
 // import db from '$lib/database';
-import {db} from '$lib/database'
+import { db } from '$lib/database'
 import { json } from "@sveltejs/kit";
 
 export const GET: RequestHandler = async (e) => {
@@ -29,18 +29,18 @@ export const GET: RequestHandler = async (e) => {
 
 // api/POST
 
-export const POST: RequestHandler = async (e) => {
-  const data = await e.request.formData()
-  const email = data.get('email')
+// export const POST: RequestHandler = async (e) => {
+//   const data = await e.request.formData()
+//   const email = data.get('email')
 
-  // sub to the newletter
-  console.log(email)
+//   // sub to the newletter
+//   console.log(email)
 
-  return new Response(
-    JSON.stringify({ sucess: true }),
-    {headers: {
-      'Content-Type': 'application/json'
-    }}
+//   return new Response(
+//     JSON.stringify({ sucess: true }),
+//     {headers: {
+//       'Content-Type': 'application/json'
+//     }}
     
-  );
-}
+//   );
+// }

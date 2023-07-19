@@ -1,4 +1,13 @@
-<script lang="ts">
+ <script lang="ts">
+	import type { PageData } from './$types';
+  // import type { Product } from '@prisma/client';
+
+	export let data: PageData;
+</script>
+
+<!--<h1>Devices</h1> -->
+
+<!-- <script lang="ts">
 	// import {page} from '$app/stores';
 	// import { error } from '@sveltejs/kit';
 
@@ -8,20 +17,17 @@
 
 		return devices;
 	}
-</script>
+</script> -->
 
 <h1>Пристрої</h1>
 
-{#await getDevices()}
+<!-- {#await getDevices()}
 	<p>Loading...</p>
-{:then devices}
-	<!-- <pre>
-  {JSON.stringify(devices, null, 2)}
-</pre> -->
-	<p>Showing {devices.length} devices.</p>
+{:then devices} -->
+	<p>Showing {data.devices.length} devices.</p>
 
   <div class="itemsList">
-	  {#each devices as { slug, title, thumbnail, price, description }}
+	  {#each data.devices as { slug, title, thumbnail, price, description }}
       <div>
         <img src="{thumbnail}" alt="{title}" width="200">
         <a href="/devices/{slug}">
@@ -33,9 +39,9 @@
       </div>
     {/each}
   </div>
-{:catch error}
+<!-- {:catch error}
 	<p>{error.message}</p>
-{/await}
+{/await} -->
 
 <style>
   h3, div.itemsList p {
@@ -87,4 +93,4 @@
     width: 100%;
     text-transform: capitalize;
   }
-</style>
+</style> 
