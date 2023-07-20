@@ -1,6 +1,5 @@
 import type { RequestHandler } from "./$types";
 
-// import db from '$lib/database';
 import { db } from '$lib/database'
 import { json } from "@sveltejs/kit";
 

@@ -3,6 +3,8 @@
   // import type { Product } from '@prisma/client';
 
 	export let data: PageData;
+
+  $: ({ devices } = data)
 </script>
 
 <!--<h1>Devices</h1> -->
@@ -24,10 +26,10 @@
 <!-- {#await getDevices()}
 	<p>Loading...</p>
 {:then devices} -->
-	<p>Showing {data.devices.length} devices.</p>
+	<p>Showing {devices.length} devices.</p>
 
   <div class="itemsList">
-	  {#each data.devices as { slug, title, thumbnail, price, description }}
+	  {#each devices as { slug, title, thumbnail, price, description }}
       <div>
         <img src="{thumbnail}" alt="{title}" width="200">
         <a href="/devices/{slug}">
@@ -35,7 +37,7 @@
         </a>
         <h3>${price}!</h3>
         <p>{description}</p>
-        <a href="#" role="button" class="contrast outline">Add to the cart!</a>
+        <a href="#" role="button" class="contrast outline">Додати до кошика!</a>
       </div>
     {/each}
   </div>
