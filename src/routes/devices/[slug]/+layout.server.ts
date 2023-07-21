@@ -1,7 +1,7 @@
-import { db } from "$lib/database";
+import { db } from "$lib/server/database";
 import type { LayoutServerLoad } from "./$types";
 
-export const load: LayoutServerLoad = async (e) => {
+export const load: LayoutServerLoad = async () => {
   const devicesCount = await db.product.count();
   const skip = Math.floor(Math.random() * devicesCount);
 

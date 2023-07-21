@@ -1,16 +1,18 @@
-import type { RequestHandler } from "./$types";
+import { json } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 
-import { db } from '$lib/database'
-import { json } from "@sveltejs/kit";
+import { db } from '$lib/server/database';
 
-export const GET: RequestHandler = async (e) => {
-  const devices = await db.product.findMany();
+export const GET: RequestHandler = async ({ url }) => {
+	const limit = Number(url.searchParams.get('limit') ?? 30);
+	const order = url.searchParams.get('order') ?? 'asc';
 
-  e.setHeaders({
-    'Cache-Control': 'max-age=60'
-  })
+	const devices = await db.product.findMany({
+		orderBy: { id: order },
+    take: limit,
+	});
 
-  return json(devices);
+	return json(devices);
 };
 
 // import type { RequestHandler } from "./$types";
@@ -40,6 +42,6 @@ export const GET: RequestHandler = async (e) => {
 //     {headers: {
 //       'Content-Type': 'application/json'
 //     }}
-    
+
 //   );
 // }

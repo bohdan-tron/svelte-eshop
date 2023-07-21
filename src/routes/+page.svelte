@@ -18,3 +18,11 @@
 <form on:submit|preventDefault={subscribe}>
   <input type="email" name="email" /><button type="submit">Subscribe</button>
 </form>
+
+<h2>Forms</h2>
+
+<form action="/login" method="post">
+  <input type="text" name="user">
+  <input type="password" name="password">
+  <button type="submit">Login</button>
+</form>
